@@ -25,8 +25,10 @@ import {
   Target,
   Users,
   Compass,
-  BookOpen
+  BookOpen,
+  Trophy
 } from 'lucide-react'
+import { TechIcon } from './TechIcons'
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -231,16 +233,16 @@ export default function App() {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 w-full sm:w-auto">
                 <a
                   href="#projects"
-                  className="w-full sm:w-auto justify-center bg-[#10B981] hover:bg-[#059669] text-white font-semibold px-6 py-4 rounded-xl flex items-center gap-2.5 shadow-[0_4px_14px_rgba(16,185,129,0.3)] transition-all duration-200 group min-h-[48px]"
+                  className="w-full sm:w-auto justify-center bg-[#10B981] hover:bg-[#059669] text-white font-semibold px-6 py-3.5 sm:py-4 rounded-xl flex items-center gap-2.5 shadow-[0_4px_14px_rgba(16,185,129,0.3)] transition-all duration-200 group min-h-[48px] text-sm sm:text-base"
                 >
-                  <RocketIcon className="w-4.5 h-4.5 group-hover:translate-x-0.5 transition-transform" />
+                  <RocketIcon className="w-5 h-5 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                   <span>View My Work</span>
                 </a>
                 <a
                   href="#contact"
-                  className="w-full sm:w-auto justify-center bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 font-semibold px-6 py-4 rounded-xl flex items-center gap-2.5 shadow-sm transition-all duration-200 group min-h-[48px]"
+                  className="w-full sm:w-auto justify-center bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 font-semibold px-6 py-3.5 sm:py-4 rounded-xl flex items-center gap-2.5 shadow-sm transition-all duration-200 group min-h-[48px] text-sm sm:text-base"
                 >
-                  <Mail className="w-4.5 h-4.5 text-slate-600 group-hover:scale-105 transition-transform" />
+                  <Mail className="w-5 h-5 shrink-0 text-slate-600 group-hover:scale-105 transition-transform" />
                   <span>Let&#39;s Connect</span>
                 </a>
               </div>
@@ -387,21 +389,24 @@ export default function App() {
                   'Python',
                   'LangChain',
                   'LangGraph',
+                  'FastMCP',
                   'RAG Systems',
                   'AI Agents',
                   'OpenAI API',
+                  'Gemini',
                   'Hugging Face',
                   'PyTorch',
+                  'Whisper',
                   'NLP',
-                  'Scikit-learn',
+                  'Qdrant',
                   'Vector Databases',
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-[0.85rem] font-medium rounded-full bg-slate-50 text-slate-700 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border border-slate-200/70 hover:bg-white hover:border-[#10B981]/50"
+                    className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-[0.85rem] font-medium rounded-full bg-slate-50 text-slate-700 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border border-slate-200/70 hover:bg-white hover:border-[#10B981]/50"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
-                    {skill}
+                    <TechIcon name={skill} className="w-3.5 h-3.5 shrink-0" />
+                    <span>{skill}</span>
                   </span>
                 ))}
               </div>
@@ -415,6 +420,7 @@ export default function App() {
               </h3>
               <div className="flex flex-wrap gap-2 sm:gap-2.5 relative z-10">
                 {[
+                  'FastAPI',
                   'React',
                   'Next.js',
                   'JavaScript',
@@ -422,17 +428,19 @@ export default function App() {
                   'Node.js',
                   'Express.js',
                   'MongoDB',
-                  'REST APIs',
                   'SQL',
-                  'Git & GitHub',
+                  'REST APIs',
+                  'WebSockets',
+                  'Redis',
                   'Docker',
+                  'Git & GitHub',
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-[0.85rem] font-medium rounded-full bg-slate-50 text-slate-700 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border border-slate-200/70 hover:bg-white hover:border-[#0284C7]/50"
+                    className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-[0.85rem] font-medium rounded-full bg-slate-50 text-slate-700 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border border-slate-200/70 hover:bg-white hover:border-[#0284C7]/50"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7]"></span>
-                    {skill}
+                    <TechIcon name={skill} className="w-3.5 h-3.5 shrink-0" />
+                    <span>{skill}</span>
                   </span>
                 ))}
               </div>
@@ -442,24 +450,28 @@ export default function App() {
             <div className="glass-card p-6 sm:p-8 lg:p-10 flex flex-col h-full rounded-[24px] lg:rounded-[2rem] relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white w-full border border-slate-200/80">
               <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-[#F59E0B] to-[#F97316] opacity-90"></div>
               <h3 className="text-sm sm:text-base font-bold tracking-widest uppercase mb-6 relative z-10 text-[#D97706] font-display">
-                Mobile &amp; Client Engineering
+                Mobile &amp; Cloud Engineering
               </h3>
               <div className="flex flex-wrap gap-2 sm:gap-2.5 relative z-10">
                 {[
                   'React Native',
                   'Expo',
-                  'Firebase',
                   'Supabase',
+                  'Firebase',
                   'Tailwind CSS',
+                  'C',
+                  'C++',
+                  'Postman',
+                  'Vercel',
+                  'Render',
                   'Responsive UI',
-                  'API Integration',
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-[0.85rem] font-medium rounded-full bg-slate-50 text-slate-700 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border border-slate-200/70 hover:bg-white hover:border-[#F59E0B]/50"
+                    className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-[0.85rem] font-medium rounded-full bg-slate-50 text-slate-700 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 border border-slate-200/70 hover:bg-white hover:border-[#F59E0B]/50"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>
-                    {skill}
+                    <TechIcon name={skill} className="w-3.5 h-3.5 shrink-0" />
+                    <span>{skill}</span>
                   </span>
                 ))}
               </div>
@@ -561,7 +573,8 @@ export default function App() {
                       key={t}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200/70 text-xs font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50/40 transition-colors"
                     >
-                      {t}
+                      <TechIcon name={t} className="w-3.5 h-3.5 shrink-0" />
+                      <span>{t}</span>
                     </span>
                   ))}
                 </div>
@@ -613,13 +626,13 @@ export default function App() {
                   </div>
                   <div className="min-w-0">
                     <span className="text-[11px] font-mono font-bold tracking-wider text-slate-400 uppercase block mb-1">
-                      ACADEMIA &amp; INDUSTRY PORTAL
+                      AGENTIC AI &amp; CAREER PLATFORM
                     </span>
                     <h3 className="text-xl sm:text-2xl font-bold text-slate-900 leading-tight tracking-tight group-hover:text-[#EA580C] transition-colors font-display">
                       Skill Bridge India
                     </h3>
                     <p className="text-xs text-slate-500 font-medium mt-0.5 truncate">
-                      National Skill Mapping &amp; Collaboration Platform
+                      Agentic AI Career Preparation Platform
                     </p>
                   </div>
                 </div>
@@ -635,30 +648,30 @@ export default function App() {
 
                 {/* Description */}
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5 font-normal">
-                  A platform designed to connect learners with skill-development opportunities and help them discover resources to grow their professional skills through academia-industry collaboration and verified skill mapping.
+                  An Agentic AI platform delivering personalized mock interviews, ATS resume analysis, and AI-generated career roadmaps for job-seeking students. Features adaptive AI interview workflows with LangGraph and Groq with multi-agent feedback.
                 </p>
 
                 {/* Key Badges */}
                 <div className="bg-[#F8FAFC] rounded-2xl border border-slate-100 p-3.5 mb-5 grid grid-cols-2 gap-3">
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <Compass className="w-4.5 h-4.5 text-[#EA580C] shrink-0" />
+                    <Sparkles className="w-4.5 h-4.5 text-[#EA580C] shrink-0" />
                     <div className="min-w-0">
                       <span className="text-[11px] font-mono font-bold text-slate-900 uppercase tracking-wider block leading-tight truncate">
-                        SKILL MAPPING
+                        AI MOCK INTERVIEWS
                       </span>
                       <span className="text-[11px] text-slate-500 font-medium leading-tight mt-0.5 block truncate">
-                        Academia &amp; Industry
+                        LangGraph &amp; Groq
                       </span>
                     </div>
                   </div>
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <Globe className="w-4.5 h-4.5 text-[#EA580C] shrink-0" />
+                    <Target className="w-4.5 h-4.5 text-[#EA580C] shrink-0" />
                     <div className="min-w-0">
                       <span className="text-[11px] font-mono font-bold text-slate-900 uppercase tracking-wider block leading-tight truncate">
-                        NATIONAL PORTAL
+                        ATS RESUME SCORING
                       </span>
                       <span className="text-[11px] text-slate-500 font-medium leading-tight mt-0.5 block truncate">
-                        Internships &amp; Placements
+                        Multi-Agent Feedback
                       </span>
                     </div>
                   </div>
@@ -666,12 +679,13 @@ export default function App() {
 
                 {/* Tech Pills */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['React', 'Tailwind CSS', 'REST APIs', 'Lucide Icons', 'Responsive UI'].map((t) => (
+                  {['React', 'FastAPI', 'LangGraph', 'Groq', 'Tailwind CSS'].map((t) => (
                     <span
                       key={t}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200/70 text-xs font-semibold text-slate-700 hover:border-orange-200 hover:bg-orange-50/40 transition-colors"
                     >
-                      {t}
+                      <TechIcon name={t} className="w-3.5 h-3.5 shrink-0" />
+                      <span>{t}</span>
                     </span>
                   ))}
                 </div>
@@ -738,8 +752,8 @@ export default function App() {
                   <Briefcase size={22} />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight font-display">2+</div>
-                  <div className="text-xs sm:text-sm font-medium text-slate-500 mt-1">Featured Platforms</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight font-display">2</div>
+                  <div className="text-xs sm:text-sm font-medium text-slate-500 mt-1">Work Experiences</div>
                 </div>
               </div>
 
@@ -748,18 +762,18 @@ export default function App() {
                   <Calendar size={22} />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight font-display">2+</div>
-                  <div className="text-xs sm:text-sm font-medium text-slate-500 mt-1">Years Building</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight font-display">1+</div>
+                  <div className="text-xs sm:text-sm font-medium text-slate-500 mt-1">Years of Experience</div>
                 </div>
               </div>
 
               <div className="bg-white rounded-2xl p-5 sm:p-6 border border-black/[0.04] shadow-[0_6px_24px_rgba(0,0,0,0.03)] flex flex-col justify-between hover:shadow-[0_12px_36px_rgba(255,107,43,0.08)] hover:border-[#FF6B2B]/20 transition-all duration-300 min-w-[150px]">
                 <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-6">
-                  <Cpu size={22} />
+                  <Users size={22} />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight font-display">10+</div>
-                  <div className="text-xs sm:text-sm font-medium text-slate-500 mt-1">Production Modules</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight font-display">1+</div>
+                  <div className="text-xs sm:text-sm font-medium text-slate-500 mt-1">Clients Served</div>
                 </div>
               </div>
             </div>
@@ -767,13 +781,13 @@ export default function App() {
 
           {/* Timeline */}
           <div className="relative mb-16 sm:mb-20 space-y-8">
-            {/* Timeline Item 1 */}
+            {/* Timeline Item 1: YourDeveloper */}
             <div className="hidden md:flex gap-6 lg:gap-8 items-stretch relative pb-10 group">
               <div className="w-32 sm:w-40 lg:w-44 shrink-0 pt-6 text-left">
                 <div className="font-bold text-[#FF6B2B] text-xs sm:text-sm lg:text-base leading-snug">
-                  2025 – Present
+                  August 2026 – Present
                 </div>
-                <div className="text-xs text-slate-400 font-medium mt-1">Ongoing</div>
+                <div className="text-xs text-slate-400 font-medium mt-1">Present · Agency</div>
               </div>
               <div className="w-6 shrink-0 flex flex-col items-center relative pt-6 self-stretch">
                 <div className="w-4 h-4 rounded-full bg-white border-[3px] border-[#FF6B2B] z-10 shrink-0 shadow-[0_0_0_4px_rgba(255,107,43,0.12)] transition-all duration-300 group-hover:scale-125 group-hover:shadow-[0_0_0_6px_rgba(255,107,43,0.2)]"></div>
@@ -783,94 +797,34 @@ export default function App() {
                 <div className="bg-white rounded-2xl p-5 sm:p-6 lg:p-7 border border-black/[0.05] shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] hover:border-[#FF6B2B]/30 transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 sm:gap-6">
                     <div className="flex items-start gap-4 sm:gap-5 flex-1 min-w-0">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 flex items-center justify-center p-2 shadow-sm bg-orange-50 border border-orange-100 text-[#EA580C]">
-                        <Target className="w-8 h-8" />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 flex items-center justify-center p-2 shadow-sm bg-black text-white">
+                        <Terminal className="w-7 h-7 sm:w-8 sm:h-8 text-[#10B981]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-bold text-lg sm:text-xl text-slate-800 tracking-tight leading-snug font-display">
-                          Lead Full-Stack &amp; Systems Developer
+                          AI Engineering Intern
                         </h3>
-                        <a
-                          href="https://skillbridge-india-eight.vercel.app/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 font-semibold text-sm sm:text-base text-[#FF6B2B] mt-0.5 hover:underline"
-                        >
-                          <span>Skill Bridge India</span>
-                          <ExternalLink size={14} />
-                        </a>
-                        <p className="text-slate-500 text-sm sm:text-[0.935rem] leading-relaxed mt-3 mb-4">
-                          Architecting the national academia-industry collaboration and skill-mapping platform. Designed multi-stakeholder workflows connecting students, educational institutions, and industry opportunities with intuitive responsive interfaces and scalable state management.
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {['React', 'Tailwind CSS', 'REST APIs', 'System Architecture', 'UI/UX Design'].map((t) => (
-                            <span
-                              key={t}
-                              className="bg-slate-100/80 hover:bg-slate-200/70 text-slate-600 text-xs font-medium px-3 py-1 rounded-full border border-slate-200/60 transition-colors"
-                            >
-                              {t}
-                            </span>
-                          ))}
+                        <div className="inline-flex items-center gap-1.5 font-semibold text-sm sm:text-base text-[#FF6B2B] mt-0.5">
+                          <span>YourDeveloper</span>
+                          <span className="text-slate-300">•</span>
+                          <span className="text-xs font-normal text-slate-500">Software Development Agency</span>
                         </div>
-                      </div>
-                    </div>
-                    <div className="flex md:flex-col items-start md:items-end justify-start gap-3 sm:gap-2 text-xs sm:text-sm text-slate-500 shrink-0 pt-1 md:pl-4 md:border-l md:border-slate-100/80">
-                      <div className="flex items-center gap-1.5 font-medium">
-                        <MapPin size={15} className="text-slate-400 shrink-0" />
-                        <span>Delhi, India</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 font-medium">
-                        <Globe size={15} className="text-slate-400 shrink-0" />
-                        <span>Remote</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Timeline Item 2 */}
-            <div className="hidden md:flex gap-6 lg:gap-8 items-stretch relative pb-10 group">
-              <div className="w-32 sm:w-40 lg:w-44 shrink-0 pt-6 text-left">
-                <div className="font-bold text-[#FF6B2B] text-xs sm:text-sm lg:text-base leading-snug">
-                  2024 – 2025
-                </div>
-                <div className="text-xs text-slate-400 font-medium mt-1">1 Year</div>
-              </div>
-              <div className="w-6 shrink-0 flex flex-col items-center relative pt-6 self-stretch">
-                <div className="w-4 h-4 rounded-full bg-white border-[3px] border-[#FF6B2B] z-10 shrink-0 shadow-[0_0_0_4px_rgba(255,107,43,0.12)] transition-all duration-300 group-hover:scale-125 group-hover:shadow-[0_0_0_6px_rgba(255,107,43,0.2)]"></div>
-                <div className="w-[2px] bg-slate-200/90 flex-1 mt-1 -mb-6"></div>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="bg-white rounded-2xl p-5 sm:p-6 lg:p-7 border border-black/[0.05] shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] hover:border-[#FF6B2B]/30 transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 sm:gap-6">
-                    <div className="flex items-start gap-4 sm:gap-5 flex-1 min-w-0">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 flex items-center justify-center p-2 shadow-sm bg-orange-50 border border-orange-100 text-[#EA580C]">
-                        <GraduationCap className="w-8 h-8" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-lg sm:text-xl text-slate-800 tracking-tight leading-snug font-display">
-                          Full-Stack &amp; Mobile Developer
-                        </h3>
-                        <a
-                          href="https://campusninja.vercel.app/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 font-semibold text-sm sm:text-base text-[#FF6B2B] mt-0.5 hover:underline"
-                        >
-                          <span>Campus Ninja</span>
-                          <ExternalLink size={14} />
-                        </a>
-                        <p className="text-slate-500 text-sm sm:text-[0.935rem] leading-relaxed mt-3 mb-4">
-                          Built full-stack academic resource hub for B.Tech students. Implemented semester syllabus search, notes repositories, previous year question archives, and collaborated on cross-platform Android mobile application.
-                        </p>
+                        <ul className="text-slate-600 text-sm sm:text-[0.935rem] leading-relaxed mt-3 mb-4 space-y-2 list-disc list-inside">
+                          <li>
+                            Developed and deployed full-stack web and mobile applications for <span className="font-semibold text-slate-800">1+ clients</span> using React, Next.js, React Native, Node.js, and modern backend technologies.
+                          </li>
+                          <li>
+                            Delivered end-to-end client solutions including responsive websites, mobile apps, REST APIs, payment integrations, and production deployments.
+                          </li>
+                        </ul>
                         <div className="flex flex-wrap gap-2">
-                          {['Next.js', 'React Native', 'TypeScript', 'Tailwind CSS', 'Android'].map((t) => (
+                          {['React', 'Next.js', 'React Native', 'Node.js', 'REST APIs', 'Payment Integrations', 'Production Deployments'].map((t) => (
                             <span
                               key={t}
-                              className="bg-slate-100/80 hover:bg-slate-200/70 text-slate-600 text-xs font-medium px-3 py-1 rounded-full border border-slate-200/60 transition-colors"
+                              className="inline-flex items-center gap-1.5 bg-slate-100/80 hover:bg-slate-200/70 text-slate-600 text-xs font-medium px-3 py-1 rounded-full border border-slate-200/60 transition-colors"
                             >
-                              {t}
+                              <TechIcon name={t} className="w-3.5 h-3.5 shrink-0" />
+                              <span>{t}</span>
                             </span>
                           ))}
                         </div>
@@ -883,7 +837,7 @@ export default function App() {
                       </div>
                       <div className="flex items-center gap-1.5 font-medium">
                         <Briefcase size={15} className="text-slate-400 shrink-0" />
-                        <span>Hybrid</span>
+                        <span>Software Agency</span>
                       </div>
                     </div>
                   </div>
@@ -891,13 +845,13 @@ export default function App() {
               </div>
             </div>
 
-            {/* Timeline Item 3 */}
+            {/* Timeline Item 2: CampusNinja */}
             <div className="hidden md:flex gap-6 lg:gap-8 items-stretch relative pb-4 group">
               <div className="w-32 sm:w-40 lg:w-44 shrink-0 pt-6 text-left">
                 <div className="font-bold text-[#FF6B2B] text-xs sm:text-sm lg:text-base leading-snug">
-                  2024 – Present
+                  Feb 2026 – Aug 2026
                 </div>
-                <div className="text-xs text-slate-400 font-medium mt-1">Research</div>
+                <div className="text-xs text-slate-400 font-medium mt-1">7 Months</div>
               </div>
               <div className="w-6 shrink-0 flex flex-col items-center relative pt-6 self-stretch">
                 <div className="w-4 h-4 rounded-full bg-white border-[3px] border-[#FF6B2B] z-10 shrink-0 shadow-[0_0_0_4px_rgba(255,107,43,0.12)] transition-all duration-300 group-hover:scale-125 group-hover:shadow-[0_0_0_6px_rgba(255,107,43,0.2)]"></div>
@@ -906,26 +860,46 @@ export default function App() {
                 <div className="bg-white rounded-2xl p-5 sm:p-6 lg:p-7 border border-black/[0.05] shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] hover:border-[#FF6B2B]/30 transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 sm:gap-6">
                     <div className="flex items-start gap-4 sm:gap-5 flex-1 min-w-0">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 flex items-center justify-center p-2 shadow-sm bg-orange-50 border border-orange-100 text-[#EA580C]">
-                        <Cpu className="w-8 h-8" />
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 flex items-center justify-center p-2 shadow-sm bg-white border border-slate-100">
+                        <img src="/campus-ninja.png" alt="CampusNinja" className="w-full h-full object-contain" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-bold text-lg sm:text-xl text-slate-800 tracking-tight leading-snug font-display">
-                          AI &amp; Agentic Systems Engineering
+                          AI Engineering and Management Intern
                         </h3>
-                        <div className="font-semibold text-sm sm:text-base text-[#FF6B2B] mt-0.5">
-                          Independent AI Engineering &amp; RAG Research
-                        </div>
-                        <p className="text-slate-500 text-sm sm:text-[0.935rem] leading-relaxed mt-3 mb-4">
-                          Designing and evaluating Retrieval-Augmented Generation (RAG) pipelines, semantic vector search mechanisms, and multi-agent workflows using LangChain, LangGraph, and modern open-source LLMs.
-                        </p>
+                        <a
+                          href="https://campusninja.vercel.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 font-semibold text-sm sm:text-base text-[#FF6B2B] mt-0.5 hover:underline"
+                        >
+                          <span>CampusNinja</span>
+                          <span className="text-slate-300">•</span>
+                          <span className="text-xs font-normal text-slate-500">AI Agency (Chatbots &amp; Agent Integrations)</span>
+                          <ExternalLink size={14} />
+                        </a>
+                        <ul className="text-slate-600 text-sm sm:text-[0.935rem] leading-relaxed mt-3 mb-4 space-y-2 list-disc list-inside">
+                          <li>
+                            Engineered RAG pipelines with context-aware retrieval, chunking, and embeddings for higher accuracy.
+                          </li>
+                          <li>
+                            Integrated LLMs, OpenAI APIs, LangChain/LangGraph, Python, and FastAPI to build intelligent AI applications and workflows.
+                          </li>
+                          <li>
+                            Built AI chatbots and agents integrated with third-party APIs, databases, and external tools for client automation.
+                          </li>
+                          <li>
+                            Developed and deployed production-ready AI solutions across multiple client projects from requirements to deployment.
+                          </li>
+                        </ul>
                         <div className="flex flex-wrap gap-2">
-                          {['Python', 'LangChain', 'LangGraph', 'RAG', 'Vector Databases', 'OpenAI API'].map((t) => (
+                          {['Python', 'FastAPI', 'LangChain', 'LangGraph', 'OpenAI API', 'RAG Pipelines', 'AI Chatbots', 'Agent Integrations'].map((t) => (
                             <span
                               key={t}
-                              className="bg-slate-100/80 hover:bg-slate-200/70 text-slate-600 text-xs font-medium px-3 py-1 rounded-full border border-slate-200/60 transition-colors"
+                              className="inline-flex items-center gap-1.5 bg-slate-100/80 hover:bg-slate-200/70 text-slate-600 text-xs font-medium px-3 py-1 rounded-full border border-slate-200/60 transition-colors"
                             >
-                              {t}
+                              <TechIcon name={t} className="w-3.5 h-3.5 shrink-0" />
+                              <span>{t}</span>
                             </span>
                           ))}
                         </div>
@@ -937,8 +911,8 @@ export default function App() {
                         <span>Delhi, India</span>
                       </div>
                       <div className="flex items-center gap-1.5 font-medium">
-                        <Code2 size={15} className="text-slate-400 shrink-0" />
-                        <span>Engineering</span>
+                        <Cpu size={15} className="text-slate-400 shrink-0" />
+                        <span>AI Agency</span>
                       </div>
                     </div>
                   </div>
@@ -950,27 +924,29 @@ export default function App() {
             <div className="md:hidden space-y-6">
               {[
                 {
-                  period: '2025 – Present',
-                  role: 'Lead Full-Stack & Systems Developer',
-                  org: 'Skill Bridge India',
-                  link: 'https://skillbridge-india-eight.vercel.app/',
-                  desc: 'Architecting the national academia-industry collaboration and skill-mapping platform.',
-                  tags: ['React', 'Tailwind CSS', 'REST APIs', 'System Architecture'],
+                  period: 'August 2026 – Present',
+                  role: 'AI Engineering Intern',
+                  org: 'YourDeveloper',
+                  subtitle: 'Software Development Agency',
+                  points: [
+                    'Developed and deployed full-stack web and mobile applications for 1+ clients using React, Next.js, React Native, Node.js, and modern backend technologies.',
+                    'Delivered end-to-end client solutions including websites, mobile apps, REST APIs, payment integrations, and production deployments.'
+                  ],
+                  tags: ['React', 'Next.js', 'React Native', 'Node.js', 'REST APIs', 'Payment Integrations'],
                 },
                 {
-                  period: '2024 – 2025',
-                  role: 'Full-Stack & Mobile Developer',
-                  org: 'Campus Ninja',
+                  period: 'Feb 2026 – Aug 2026',
+                  role: 'AI Engineering and Management Intern',
+                  org: 'CampusNinja',
+                  subtitle: 'AI Agency (Chatbots & Agent Integrations)',
                   link: 'https://campusninja.vercel.app/',
-                  desc: 'Built full-stack academic resource platform and Android application for B.Tech students.',
-                  tags: ['Next.js', 'React Native', 'TypeScript', 'Tailwind CSS'],
-                },
-                {
-                  period: '2024 – Present',
-                  role: 'AI & Systems Developer',
-                  org: 'Autonomous Systems & RAG Research',
-                  desc: 'Designing RAG architectures and multi-agent workflows using LangChain and LangGraph.',
-                  tags: ['Python', 'LangChain', 'LangGraph', 'RAG', 'Vector DBs'],
+                  points: [
+                    'Engineered RAG pipelines with context-aware retrieval, chunking, and embeddings for higher accuracy.',
+                    'Integrated LLMs, OpenAI APIs, LangChain/LangGraph, Python, and FastAPI to build intelligent AI applications and workflows.',
+                    'Built AI chatbots and agents integrated with third-party APIs, databases, and external tools for client automation.',
+                    'Developed and deployed production-ready AI solutions across multiple client projects from requirements to deployment.'
+                  ],
+                  tags: ['Python', 'FastAPI', 'LangChain', 'LangGraph', 'OpenAI API', 'RAG'],
                 },
               ].map((item, idx) => (
                 <div
@@ -985,26 +961,36 @@ export default function App() {
                     <h3 className="font-bold text-base text-slate-900 leading-snug font-display">
                       {item.role}
                     </h3>
-                    {item.link ? (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-xs text-[#FF6B2B] hover:underline"
-                      >
-                        {item.org}
-                      </a>
-                    ) : (
-                      <span className="font-semibold text-xs text-[#FF6B2B]">{item.org}</span>
-                    )}
-                    <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                    <div className="flex flex-col">
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-xs text-[#FF6B2B] hover:underline"
+                        >
+                          {item.org}
+                        </a>
+                      ) : (
+                        <span className="font-semibold text-xs text-[#FF6B2B]">{item.org}</span>
+                      )}
+                      {item.subtitle && (
+                        <span className="text-[11px] text-slate-400 mt-0.5">{item.subtitle}</span>
+                      )}
+                    </div>
+                    <ul className="text-slate-600 text-xs sm:text-sm leading-relaxed space-y-1.5 list-disc list-inside">
+                      {item.points.map((p, pIdx) => (
+                        <li key={pIdx}>{p}</li>
+                      ))}
+                    </ul>
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {item.tags.map((t) => (
                         <span
                           key={t}
-                          className="bg-slate-100/90 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-full border border-slate-200/60"
+                          className="inline-flex items-center gap-1 bg-slate-100/90 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-full border border-slate-200/60"
                         >
-                          {t}
+                          <TechIcon name={t} className="w-3 h-3 shrink-0" />
+                          <span>{t}</span>
                         </span>
                       ))}
                     </div>
@@ -1105,64 +1091,162 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Right Column: Clean Verified Achievement Cards (Hackathon & Open Source Removed) */}
-              <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 flex-1 w-full">
-                {/* Card 1 */}
+              {/* Right Column: Achievement Cards */}
+              <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 flex-1 w-full">
+                {/* Card 1: Rethink Hackathon */}
+                <div className="bg-white rounded-2xl p-6 border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_36px_rgba(255,107,43,0.08)] hover:border-[#FF6B2B]/20 transition-all duration-300 flex flex-col justify-start group">
+                  <div className="w-12 h-12 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-bold tracking-wider text-[#FF6B2B] uppercase block mb-1">
+                    Finalist · 2026
+                  </span>
+                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-1 font-display">
+                    Rethink Hackathon
+                  </h4>
+                  <p className="text-[12px] font-semibold text-slate-600 mb-2">
+                    MACSTAK, Maharaja Agrasen College, DU
+                  </p>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Selected as a Finalist at Rethink Hackathon, organized by MACSTAK, Department of Computer Science, Maharaja Agrasen College, University of Delhi.
+                  </p>
+                </div>
+
+                {/* Card 2: AITHON 2.0 */}
+                <div className="bg-white rounded-2xl p-6 border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_36px_rgba(255,107,43,0.08)] hover:border-[#FF6B2B]/20 transition-all duration-300 flex flex-col justify-start group">
+                  <div className="w-12 h-12 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
+                    <Trophy className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-mono font-bold tracking-wider text-[#FF6B2B] uppercase block mb-1">
+                    National Finalist · 2026
+                  </span>
+                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-1 font-display">
+                    AITHON 2.0
+                  </h4>
+                  <p className="text-[12px] font-semibold text-slate-600 mb-2">
+                    Amrutvahini College of Engineering, Sangamner
+                  </p>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Selected as a Finalist for the finale of AITHON 2.0, a national-level hackathon organized by the Department of Artificial Intelligence and Data Science.
+                  </p>
+                </div>
+
+                {/* Card 3: Full Stack Developer */}
                 <div className="bg-white rounded-2xl p-6 border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_36px_rgba(255,107,43,0.08)] hover:border-[#FF6B2B]/20 transition-all duration-300 flex flex-col justify-start group">
                   <div className="w-12 h-12 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
                     <RocketIcon className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-2 font-display">
+                  <span className="text-[11px] font-mono font-bold tracking-wider text-[#FF6B2B] uppercase block mb-1">
+                    Engineering
+                  </span>
+                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-1 font-display">
                     Full Stack Developer
                   </h4>
+                  <p className="text-[12px] font-semibold text-slate-600 mb-2">
+                    Web &amp; Mobile Applications
+                  </p>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                    Built and deployed full-stack web and mobile applications solving real-world challenges for students and educators.
+                    Built and deployed full-stack web and mobile applications solving real-world challenges for 1+ clients and student platforms.
                   </p>
                 </div>
 
-                {/* Card 2 */}
+                {/* Card 4: AI & Agentic Systems */}
                 <div className="bg-white rounded-2xl p-6 border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_36px_rgba(255,107,43,0.08)] hover:border-[#FF6B2B]/20 transition-all duration-300 flex flex-col justify-start group">
                   <div className="w-12 h-12 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
                     <Cpu className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-2 font-display">
-                    AI/ML Explorer
+                  <span className="text-[11px] font-mono font-bold tracking-wider text-[#FF6B2B] uppercase block mb-1">
+                    AI &amp; GenAI
+                  </span>
+                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-1 font-display">
+                    AI &amp; Agentic Systems
                   </h4>
+                  <p className="text-[12px] font-semibold text-slate-600 mb-2">
+                    RAG &amp; LLM Workflows
+                  </p>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                    Developing practical AI solutions, specialized RAG pipelines, and intelligent agent workflows with LLMs.
+                    Developing production-ready RAG architectures, LLM chatbots, and multi-agent workflows using LangGraph, LangChain, and FastAPI.
                   </p>
                 </div>
 
-                {/* Card 3 */}
+                {/* Card 5: Mentor & Community Builder */}
                 <div className="bg-white rounded-2xl p-6 border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_36px_rgba(255,107,43,0.08)] hover:border-[#FF6B2B]/20 transition-all duration-300 flex flex-col justify-start group">
                   <div className="w-12 h-12 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
                     <Users className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-2 font-display">
-                    Mentor &amp; Community Builder
+                  <span className="text-[11px] font-mono font-bold tracking-wider text-[#FF6B2B] uppercase block mb-1">
+                    Leadership
+                  </span>
+                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-1 font-display">
+                    Community &amp; Mentorship
                   </h4>
+                  <p className="text-[12px] font-semibold text-slate-600 mb-2">
+                    Developer Cohorts
+                  </p>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                    Mentoring peers in software development, sharing roadmap guidance, and building collaborative peer groups.
+                    Mentoring peers in software development, sharing roadmap guidance, and building collaborative developer cohorts.
                   </p>
                 </div>
 
-                {/* Card 4 */}
+                {/* Card 6: Consistent Learner */}
                 <div className="bg-white rounded-2xl p-6 border border-black/[0.04] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_36px_rgba(255,107,43,0.08)] hover:border-[#FF6B2B]/20 transition-all duration-300 flex flex-col justify-start group">
                   <div className="w-12 h-12 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shrink-0">
                     <Sparkles className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-2 font-display">
+                  <span className="text-[11px] font-mono font-bold tracking-wider text-[#FF6B2B] uppercase block mb-1">
+                    Growth
+                  </span>
+                  <h4 className="text-lg sm:text-[1.125rem] font-bold text-slate-800 tracking-tight leading-snug mb-1 font-display">
                     Consistent Learner
                   </h4>
+                  <p className="text-[12px] font-semibold text-slate-600 mb-2">
+                    Continuous Mastery
+                  </p>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                    Continuously mastering modern AI architectures, agent frameworks, and high-performance full-stack web stacks.
+                    Continuously mastering modern AI architectures, agent frameworks, and high-performance full-stack web technologies.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Metric Summary Counters Bar */}
-            <div className="mt-14 sm:mt-16 bg-white rounded-3xl p-6 sm:p-8 lg:py-9 border border-black/[0.04] shadow-[0_8px_30px_rgba(0,0,0,0.03)] grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-100">
+            <div className="mt-14 sm:mt-16 bg-white rounded-3xl p-6 sm:p-8 lg:py-9 border border-black/[0.04] shadow-[0_8px_30px_rgba(0,0,0,0.03)] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-100">
+              <div className="flex flex-col items-center text-center px-2 lg:px-4 pt-4 first:pt-0 sm:pt-0">
+                <div className="w-10 h-10 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-3">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-[#FF6B2B] tracking-tight font-display">
+                  2
+                </div>
+                <div className="text-xs sm:text-sm font-semibold text-slate-700 mt-1">
+                  Hackathons Finalist
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center text-center px-2 lg:px-4 pt-4 first:pt-0 sm:pt-0">
+                <div className="w-10 h-10 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-3">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-[#FF6B2B] tracking-tight font-display">
+                  1+
+                </div>
+                <div className="text-xs sm:text-sm font-semibold text-slate-700 mt-1">
+                  Clients Served
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center text-center px-2 lg:px-4 pt-4 first:pt-0 sm:pt-0">
+                <div className="w-10 h-10 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-3">
+                  <Calendar className="w-5 h-5" />
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-[#FF6B2B] tracking-tight font-display">
+                  1+
+                </div>
+                <div className="text-xs sm:text-sm font-semibold text-slate-700 mt-1">
+                  Years Experience
+                </div>
+              </div>
+
               <div className="flex flex-col items-center text-center px-2 lg:px-4 pt-4 first:pt-0 sm:pt-0">
                 <div className="w-10 h-10 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-3">
                   <RocketIcon className="w-5 h-5" />
@@ -1180,34 +1264,22 @@ export default function App() {
                   <Code2 className="w-5 h-5" />
                 </div>
                 <div className="text-2xl sm:text-3xl font-bold text-[#FF6B2B] tracking-tight font-display">
-                  10+
+                  2+
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-slate-700 mt-1">
-                  AI &amp; Web Modules
+                  Production Modules
                 </div>
               </div>
 
               <div className="flex flex-col items-center text-center px-2 lg:px-4 pt-4 first:pt-0 sm:pt-0">
                 <div className="w-10 h-10 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-3">
-                  <Users className="w-5 h-5" />
+                  <GraduationCap className="w-5 h-5" />
                 </div>
                 <div className="text-2xl sm:text-3xl font-bold text-[#FF6B2B] tracking-tight font-display">
                   100+
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-slate-700 mt-1">
                   Students Impacted
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center text-center px-2 lg:px-4 pt-4 first:pt-0 sm:pt-0">
-                <div className="w-10 h-10 rounded-xl bg-[#FFF5F0] text-[#FF6B2B] flex items-center justify-center mb-3">
-                  <Calendar className="w-5 h-5" />
-                </div>
-                <div className="text-2xl sm:text-3xl font-bold text-[#FF6B2B] tracking-tight font-display">
-                  2+
-                </div>
-                <div className="text-xs sm:text-sm font-semibold text-slate-700 mt-1">
-                  Years of Learning
                 </div>
               </div>
             </div>
@@ -1353,6 +1425,8 @@ function RocketIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
